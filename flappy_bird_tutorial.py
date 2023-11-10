@@ -11,3 +11,9 @@ BIRD_IMGS = [pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "bi
 PIPE_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "pipe.png")))
 BASE_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "base.png")))
 BG_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "bg.png")))
+
+class Bird:
+    IMGS = BIRD_IMGS
+    MAX_ROTATION = 25
+    ROT_VEL = 20
+    ANIMATION_TIME = 5  
