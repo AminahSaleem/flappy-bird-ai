@@ -33,4 +33,9 @@ class Bird:
         self.tick_count = 0
         self.height = self.y
         
+    def move(self):   
+        
+while True:
+    bird.move()        
+        
         
