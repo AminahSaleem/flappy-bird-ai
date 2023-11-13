@@ -67,7 +67,15 @@ class Bird:
             self.img = self.IMGS[1]
         elif self.img_count == self.ANIMATION_TIME*4 +1:
             self.img = self.IMGS[0]
-            self.img_count = 0            
+            self.img_count = 0 
+            
+        if self.tilt <= -80:
+            self.img = self.IMGS[1]
+            self.img_count = self.ANIMATION_TIME82
+            
+        rotated_image = pygame.trandform.rotate(self.img, self.tilt)
+        new_rect = rotated_image.get_rect(center=self.img.get_rect(topleft = (self.x, self.y)).center)
+        win.blit(rotated_image, new_rect.topleft)                   
 while True:
     bird.move()        
         
