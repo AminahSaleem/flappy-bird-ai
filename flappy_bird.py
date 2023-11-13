@@ -78,7 +78,12 @@ class Bird:
         win.blit(rotated_image, new_rect.topleft)  
         
     def get_mask(self):         
-        return pygame.mask.from_surface(self.img)            
+        return pygame.mask.from_surface(self.img)  
+    
+    def draw_window(win, bird):
+        win.blit(BG_IMG, (0,0))
+        bird.draw(win)
+        pygame.display.update()          
 while True:
     bird.move()        
         
