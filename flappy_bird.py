@@ -38,6 +38,22 @@ class Bird:
         
         d= self.vel*self.tick_count + 1.5*self.tick_count**2   
         
+        if d >= 16:
+            d = 16
+            
+        if d < 0:
+            d -=2
+            
+        self.y = self.y + d
+        
+        if d < 0 or self.y < self.height + 50:
+            if self.tile < self.MAX_ROTATION:
+                self.tilt = self.MAX_ROTATION
+            
+        else:
+            if self.tilt > -90:
+                self.tilt -= self.ROT_VEL            
+        
 while True:
     bird.move()        
         
