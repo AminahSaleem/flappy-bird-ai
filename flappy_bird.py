@@ -39,9 +39,9 @@ class Bird:
         self.height = self.y
 
     def move(self):
-        self.tick_count += 1
+        self.tilt_count += 1
 
-        d = self.vel * self.tick_count + 1.5 * self.tick_count ** 2
+        d = self.vel * self.tilt_count + 1.5 * self.tilt_count ** 2
 
         if d >= 16:
             d = 16
@@ -95,23 +95,21 @@ def draw_window(win, bird):
 def main():
     bird = Bird(200, 200)
     win = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
+    clock = pygame.time.Clock()
 
     run = True
     while run:
+        clock.tick(30)
         for event in pygame.event.get():
 
             if event.type == pygame.QUIT:
                 run = False
+
+        bird.move()
         draw_window(win, bird)
 
     pygame.quit()
     quit()
-    
-if __name__ == "__main__":
-    main()    
-                  
 
 
-
-        
-        
+main()
