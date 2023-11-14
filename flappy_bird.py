@@ -108,7 +108,11 @@ class Pipe:
         self.bottom = self.height + self.GAP 
      
     def move(self): 
-        self.x -= self.VEL      
+        self.x -= self.VEL
+        
+    def draw(self, win):
+        win.blit(self.PIPE_TOP, (self.x, self.top)) 
+        win.blit(self.PIPE_BOTTOM, (self.x, self.bottom))         
         
 def draw_window(win, bird):
     win.blit(BG_IMG, (0, 0))
