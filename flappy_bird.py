@@ -112,7 +112,16 @@ class Pipe:
         
     def draw(self, win):
         win.blit(self.PIPE_TOP, (self.x, self.top)) 
-        win.blit(self.PIPE_BOTTOM, (self.x, self.bottom))         
+        win.blit(self.PIPE_BOTTOM, (self.x, self.bottom))
+        
+    def colide(self, bird):
+        bird_mask = bird.get_mask()
+        top_mask = pygame.mask.from_surface(self.PIPE_TOP)
+        bottom_mask = pygame.mask.from_surface(self.PIPE_BOTTOM)
+        
+        top_offset = (self.x - bird.x, self.top - round(bird.y))
+        bottom_offset = (self.x - bird.x, self.bottom - round(bird.y))
+                   
         
 def draw_window(win, bird):
     win.blit(BG_IMG, (0, 0))
