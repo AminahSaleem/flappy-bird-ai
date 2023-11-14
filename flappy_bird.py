@@ -134,6 +134,13 @@ class  Base:
     VEL = 5
     WIDTH = BASE_IMG.get_width()
     IMG = BASE_IMG
+    
+    def __init__(self, y):
+        self.y = y
+        self.x1 = 0
+        self.x2 = self.WIDTH
+        
+        
         
                    
         
