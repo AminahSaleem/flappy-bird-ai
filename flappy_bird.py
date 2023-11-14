@@ -99,6 +99,14 @@ class Pipe:
         self.PIPE_TOP = pygame.transform.flip(PIPE_IMG, False, True)
         self.PIPE_BOTTOM = PIPE_IMG
         
+        self.passed = False
+        self.set_height()
+        
+    def set_height(self):
+        self.height = random.randrange(50, 450)
+        self.top = self.height - self.PIPE_TOP.get_height()
+        self.bottom = self.height + self.GAP    
+        
 def draw_window(win, bird):
     win.blit(BG_IMG, (0, 0))
     bird.draw(win)
