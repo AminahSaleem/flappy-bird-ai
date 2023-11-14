@@ -129,6 +129,12 @@ class Pipe:
             return True
         
         return False 
+    
+class  Base:
+    VEL = 5
+    WIDTH = BASE_IMG.get_width()
+    IMG = BASE_IMG
+        
                    
         
 def draw_window(win, bird):
