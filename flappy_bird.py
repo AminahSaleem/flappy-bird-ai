@@ -178,6 +178,7 @@ def main():
     bird = Bird(230, 350)
     base = Base(730)
     pipes = [Pipe(700)]
+    score = 0
     
     win = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
     clock = pygame.time.Clock()
@@ -205,15 +206,15 @@ def main():
                 
             pipe.move()
             
-            if add_pipe: 
+        if add_pipe: 
                 score += 1
                 pipes.append(Pipe(600)) 
                 
-                for r in rem:
-                    pipes.remove(r)
+        for r in rem:
+            pipes.remove(r)
                     
-            if bird.y + bird.img.get_height() >= 730:
-                pass           
+        if bird.y + bird.img.get_height() >= 730:
+            pass           
 
         base.move()
         draw_window(win, bird, pipes, base, score)
