@@ -183,9 +183,24 @@ def main():
 
             if event.type == pygame.QUIT:
                 run = False
-                
+         
+        rem = []       
         for pipe in pipes:
-            pipe.move()        
+            if pipe.collide(bird):
+                pass
+            
+            if pipe.x + pipe.PIPE_TOP.get_width() < 0:
+                 rem.append(pipe) 
+                 
+            if not pipe.passed and pipe.x < bird.x:
+                pipe.passed = True
+                add_pipe = True
+                
+            pipe.move()
+            
+            if add_pipe: 
+                score += 1
+                pipes.append(Pipe(700))      
 
         base.move()
         draw_window(win, bird, pipes, base)
