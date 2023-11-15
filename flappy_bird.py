@@ -92,7 +92,7 @@ class Pipe:
     def __init__(self, x):
         self.x = x
         self.height = 0 
-        self.gap
+        self.GAP
         
         self.top = 0
         self.bottom = 0
@@ -184,8 +184,8 @@ def main():
             if event.type == pygame.QUIT:
                 run = False
 
-        bird.move()
-        draw_window(win, bird)
+        base.move()
+        draw_window(win, bird, pipes, base)
 
     pygame.quit()
     quit()
