@@ -156,8 +156,12 @@ class  Base:
         
                    
         
-def draw_window(win, bird):
+def draw_window(win, bird, pipes, base):
     win.blit(BG_IMG, (0, 0))
+    
+    for pipe in pipes:
+        pipe.draw(win)
+        
     bird.draw(win)
     pygame.display.update()
 
