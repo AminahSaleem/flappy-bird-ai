@@ -16,6 +16,8 @@ PIPE_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "pipe
 BASE_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "base.png")))
 BG_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "bg.png")))
 
+STAT_FONT = pygame.font.SysFont("comicsans", 50)
+
 
 class Bird:
     IMGS = BIRD_IMGS
@@ -156,7 +158,7 @@ class  Base:
         
                    
         
-def draw_window(win, bird, pipes, base):
+def draw_window(win, bird, pipes, base, scored ):
     win.blit(BG_IMG, (0, 0))
     
     for pipe in pipes:
