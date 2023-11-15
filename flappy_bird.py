@@ -3,6 +3,7 @@ import neat
 import time
 import os
 import random
+pygame.font.init()
 
 WIN_WIDTH = 500
 WIN_HEIGHT = 800
@@ -158,11 +159,14 @@ class  Base:
         
                    
         
-def draw_window(win, bird, pipes, base, scored ):
+def draw_window(win, bird, pipes, base, score):
     win.blit(BG_IMG, (0, 0))
     
     for pipe in pipes:
         pipe.draw(win)
+        
+    text = STAT_FONT.render("Score: " + str(score), 1,(255,255,255))
+    win.blit(text, (WIN_WIDTH - 10 - text.get_width(), 10))    
         
     base.draw(win)    
         
@@ -212,7 +216,7 @@ def main():
                 pass           
 
         base.move()
-        draw_window(win, bird, pipes, base)
+        draw_window(win, bird, pipes, base, score)
 
     pygame.quit()
     quit()
