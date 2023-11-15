@@ -162,6 +162,8 @@ def draw_window(win, bird, pipes, base):
     for pipe in pipes:
         pipe.draw(win)
         
+    base.draw(win)    
+        
     bird.draw(win)
     pygame.display.update()
 
