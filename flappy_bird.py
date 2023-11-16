@@ -222,6 +222,8 @@ def main(genomes, config):
             
         if add_pipe: 
                 score += 1
+                for ge in ge:
+                    g.fitness += 5
                 pipes.append(Pipe(600)) 
                 
         for r in rem:
