@@ -226,6 +226,9 @@ def main():
 main()
 
 def run():
+    config = neat.config.Config(neat.DefaultGenome, neat.DefaultReproduction,
+                                neat.DefaultSpeciesSet, neat.DefaultStagnation,
+                                config_path)
     pass
 
 if __name__ == "__main__":
