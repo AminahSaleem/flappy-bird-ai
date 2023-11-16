@@ -229,9 +229,11 @@ def main(genomes, config):
         for r in rem:
             pipes.remove(r)
             
-        for bird in birds:            
+        for x, bird in enumerate(birds):            
             if bird.y + bird.img.get_height() >= 730:
-                pass           
+                birds.pop(x)
+                nets.pop(x)      
+                ge.pop(x)     
 
         base.move()
         draw_window(win, bird, pipes, base, score)
