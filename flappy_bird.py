@@ -263,22 +263,27 @@ def main(genomes, config):
             if bird.y + bird.img.get_height() >= 730 or bird.y < 0:
                 birds.pop(x)
                 nets.pop(x)      
-                ge.pop(x)     
+                ge.pop(x)  
+                
+        if score > 50:
+            break      
 
         base.move()
-        draw_window(win, bird, pipes, base, score)
+        draw_window(win, bird, pipes, base, score, GEN)
 
 
 def run(config_path):
     config = neat.config.Config(neat.DefaultGenome, neat.DefaultReproduction,
                                 neat.DefaultSpeciesSet, neat.DefaultStagnation,
                                 config_path)
+    
     p = neat.Population(config)
+    
     p.add_reporter(neat.StdOutReporter(True))
     stats = neat.StatisticsReporter()
     p.add_reporter(stats)
     
-    winner = p.run()
+    winner = p.run(main, 50)
 
 
 if __name__ == "__main__":
