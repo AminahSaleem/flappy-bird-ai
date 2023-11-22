@@ -182,6 +182,8 @@ def draw_window(win, bird, pipes, base, score, gen):
 
 
 def main(genomes, config):
+    global GEN
+    GEN +=1 
     nets = []
     ge = []
     birds = []
