@@ -168,9 +168,11 @@ def draw_window(win, bird, pipes, base, score):
     text = STAT_FONT.render("Score: " + str(score), 1,(255,255,255))
     win.blit(text, (WIN_WIDTH - 10 - text.get_width(), 10))    
         
-    base.draw(win)    
+    base.draw(win)  
+      
+    for bird in birds:
+        bird.draw(win)  
         
-    bird.draw(win)
     pygame.display.update()
 
 
