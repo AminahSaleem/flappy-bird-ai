@@ -200,6 +200,9 @@ def main(genomes, config):
 
             if event.type == pygame.QUIT:
                 run = False
+                pygame.quit()
+                quit()
+
                 
         pipe_ind = 0
         if len(birds) > 0:
@@ -252,11 +255,6 @@ def main(genomes, config):
         base.move()
         draw_window(win, bird, pipes, base, score)
 
-    pygame.quit()
-    quit()
-
-
-main()
 
 def run(config_path):
     config = neat.config.Config(neat.DefaultGenome, neat.DefaultReproduction,
