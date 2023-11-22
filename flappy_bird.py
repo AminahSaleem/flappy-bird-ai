@@ -219,7 +219,7 @@ def main(genomes, config):
             
             output = nets[x].activate((bird.y, abs(bird.y - pipes[pipe_ind].height), abs(bird.y - pipes[pipe_ind].bottom)))  
             
-            if output > 0.5:
+            if output[0] > 0.5:
                 bird.jump()         
         
         add_pipe = False 
