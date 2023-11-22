@@ -179,8 +179,9 @@ def main(genomes, config):
     ge = []
     birds = []
     
-    for g in genomes:
-        net = net.nn.FeedForwardNetwork(g, config)
+    
+    for _, g in genomes:
+        net = net.nn.FeedForwardNetwork.create(g, config)
         nets.append(net)
         birds.append(Bird(230, 350))
         g.fitness = 0 
